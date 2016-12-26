@@ -15,8 +15,20 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  <%= @addresses.length %>
+  <% @addresses.each do |address| %>
+      <%= f.fields_for :addresses, address do |add| %>
+            
+                <div class="form-group">
+                    <%= add.label :desc%>
+                    <%= add.text_field :desc%>
+                    </div>
+                </div>
+      <%end%>
+<% end %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

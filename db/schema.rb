@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20161226083423) do
   create_table "addresses", force: :cascade do |t|
     t.string   "desc"
     t.integer  "user_id"
+    t.boolean  "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"

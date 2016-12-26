@@ -4,7 +4,8 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    @user = User.find(params[:user_id])
+    @addresses = @user.addresses
   end
 
   # GET /addresses/1
